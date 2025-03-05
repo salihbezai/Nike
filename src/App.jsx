@@ -1,14 +1,16 @@
-import "./App.css"
-import { Hero } from "./Components"
-import { heroapi } from "./data/data.js"
+import "./App.css";
+import { Hero, Sales } from "./Components";
+import { heroapi, popularsales, topratesales } from "./data/data.js";
 const App = () => {
   return (
     <>
-    <main>
-      <Hero heroapi={heroapi}/>
-    </main>
+      <main className="flex flex-col gap-16 relative">
+        <Hero heroapi={heroapi} />
+        <Sales endpoint={popularsales} />
+        <Sales endpoint={topratesales} />
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
