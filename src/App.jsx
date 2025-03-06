@@ -9,7 +9,7 @@ import {
 const App = () => {
   return (
     <>
-      <main className="flex flex-col gap-16 relative">
+      <main className="flex flex-col gap-50 relative">
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
         <FlexContent endpoint={highlight} ifExists />
