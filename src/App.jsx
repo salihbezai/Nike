@@ -1,4 +1,3 @@
-import "./App.css";
 import { FlexContent, Hero, Sales } from "./Components";
 import {
   heroapi,

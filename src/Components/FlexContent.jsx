@@ -7,9 +7,9 @@ const FlexContent = ({
   return (
     <>
       <div
-        className={`flex items-center justify-between lg:flex-col 
+        className={`flex items-center justify-between flex-col md:flex-row  
             lg:justify-center nike-container ${
-              ifExists ? "flex-row-reverse" : "flex-row"
+              ifExists ? "md:flex-row-reverse" : "md:flex-row"
             }`}
       >
         <div
