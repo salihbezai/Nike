@@ -1,10 +1,11 @@
-import { FlexContent, Hero, Sales } from "./Components";
+import { FlexContent, Hero, Sales, Stories } from "./Components";
 import {
   heroapi,
   popularsales,
   topratesales,
   highlight,
   sneaker,
+  story,
 } from "./data/data.js";
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <FlexContent endpoint={highlight} ifExists />
         <Sales endpoint={topratesales} />
         <FlexContent endpoint={sneaker} />
+        <Stories story={story} />
       </main>
     </>
   );
