@@ -28,7 +28,7 @@ const Stories = ({ story: { title, news } }) => {
     <>
       <div className="nike-container mb-11">
         <Title title={title} />
-        <div className="">
+        <div className="mt-7">
           <Splide options={splideOptions}>
             {news.map((val, i) => (
               <SplideSlide key={i} className="mb-8.5">

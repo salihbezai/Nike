@@ -1,4 +1,11 @@
-import { FlexContent, Hero, Sales, Stories } from "./Components";
+import {
+  FlexContent,
+  Footer,
+  Hero,
+  Navbar,
+  Sales,
+  Stories,
+} from "./Components";
 import {
   heroapi,
   popularsales,
@@ -6,11 +13,13 @@ import {
   highlight,
   sneaker,
   story,
+  footerAPI,
 } from "./data/data.js";
 const App = () => {
   return (
     <>
-      <main className="flex flex-col gap-50 relative">
+      <Navbar />
+      <main className="flex flex-col gap-40 relative">
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
         <FlexContent endpoint={highlight} ifExists />
@@ -18,6 +27,7 @@ const App = () => {
         <FlexContent endpoint={sneaker} />
         <Stories story={story} />
       </main>
+      <Footer footerAPI={footerAPI} />
     </>
   );
 };
