@@ -6,7 +6,7 @@ import { setCloseCart } from "../app/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-  const cartState = useSelector((state) => state.cart.cartState);
+  const { cartState, cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const onCartToggle = () => {
@@ -28,8 +28,20 @@ const Cart = () => {
           className={`blur-effect-theme h-screen max-w-xl w-full absolute right-0`}
         >
           <CartCount onCartToggle={onCartToggle} />
-          <CartEmpty />
-          <CartItem />
+          {cartItems?.length === 0 ? (
+            <CartEmpty />
+          ) : (
+            <div>
+              <div
+                className="flex items-start justify-start flex-col 
+              gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scrool-hidden"
+              >
+                {cartItems?.map((item, i) => (
+                  <CartItem key={i} item={item} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
