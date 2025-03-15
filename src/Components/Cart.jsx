@@ -2,15 +2,24 @@ import React, { useEffect } from "react";
 import CartCount from "./Cart/CartCount";
 import CartEmpty from "./Cart/CartEmpty";
 import CartItem from "./Cart/CartItem";
-import { setCloseCart } from "../app/CartSlice";
+import { setClearItemQTY, setCloseCart, setGetTotals } from "../app/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
   const { cartState, cartItems } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
+  const totalQTY = useSelector((state) => state.cart.cartTotalQuantity);
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setGetTotals());
+  }, [cartItems, dispatch]);
   const onCartToggle = () => {
     dispatch(setCloseCart({ cartState: false }));
+  };
+
+  const onClearCartItems = () => {
+    dispatch(setClearItemQTY());
   };
 
   return (
@@ -27,9 +36,13 @@ const Cart = () => {
         <div
           className={`blur-effect-theme h-screen max-w-xl w-full absolute right-0`}
         >
-          <CartCount onCartToggle={onCartToggle} />
+          <CartCount
+            onCartToggle={onCartToggle}
+            onClearCartItems={onClearCartItems}
+            totalQTY={totalQTY}
+          />
           {cartItems?.length === 0 ? (
-            <CartEmpty />
+            <CartEmpty onCartToggle={onCartToggle} />
           ) : (
             <div>
               <div
@@ -49,7 +62,7 @@ const Cart = () => {
                     SubTotal
                   </h1>
                   <h1 className="text-sm rounded bg-theme-cart text-slate-100 px-1 py-0.5">
-                    000
+                    ${totalAmount}
                   </h1>
                 </div>
                 <div className="grid items-center gap-2">
