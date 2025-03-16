@@ -26,9 +26,9 @@ I created Nike Store to demonstrate my skills in React, Redux, and Tailwind CSS.
 git clone https://github.com/yourusername/nike-store.git
 ```
 
-```bash
+
 2️⃣ Install dependencies:  
-```
+
 
 ```bash
 npm install
