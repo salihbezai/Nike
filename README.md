@@ -1,4 +1,4 @@
-👟 Nike Store
+👟 Nike Store  
 Welcome to Nike Store — an e-commerce web app I built to showcase my front-end development skills. Visitors can browse the latest Nike shoes and add them to their cart for a seamless shopping experience.
 
 🌐 Website Link: Nike Store
