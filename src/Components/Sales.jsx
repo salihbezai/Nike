@@ -3,7 +3,6 @@ import Item from "./utils/Item";
 import Title from "./utils/Title";
 
 const Sales = ({ endpoint: { title, items }, ifExists }) => {
-  console.log("if exists " + ifExists);
   return (
     <>
       <div className="nike-container">

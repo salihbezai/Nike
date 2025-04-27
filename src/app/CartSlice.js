@@ -81,6 +81,7 @@ const CartSlice = createSlice({
           totalQTY: 0,
         }
       );
+
       state.cartTotalAmount = totalAmount;
       state.cartTotalQuantity = totalQTY;
     },

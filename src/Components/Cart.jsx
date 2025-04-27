@@ -11,9 +11,11 @@ const Cart = () => {
   const totalQTY = useSelector((state) => state.cart.cartTotalQuantity);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(setGetTotals());
   }, [cartItems, dispatch]);
+
   const onCartToggle = () => {
     dispatch(setCloseCart({ cartState: false }));
   };
